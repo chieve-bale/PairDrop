@@ -172,8 +172,31 @@ npm start
 ```
 
 > By default, the node server listens on port 3000.
+## Deployment with building executable file
 
+Clone this repository and enter the folder
 
+```bash
+git clone https://github.com/schlagmichdoch/PairDrop.git && cd PairDrop
+```
+
+Install all dependencies with NPM:
+
+```bash
+npm install esbuild pkg --save-dev
+```
+
+trans ./server/* ( with ES6 ) to ./dist/bundle.cjs ( with commanJS )
+
+```bash
+node build.js
+```
+
+build executable file, you can find it in ./dist/  and you can Specify system version and architecture in package.json
+
+```
+pkg .
+```
 <br>
 
 ### Options / Flags
