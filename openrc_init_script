@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+
+name='pairdrop'
+description="pairdrop OpenRC init file"
+
+BIN_PATH='path to pairdrop'
+
+#export DEBUG_MODE="true"
+#export PORT=84
+#export WS_FALLBACK=true
+#export RTC_CONFIG="${BIN_PATH}/rtc_config.json"
+
+command="${BIN_PATH}/pairdrop"
+#command_args=""
+
+command_background=true
+
+pidfile="/run/${RC_SVCNAME}.pid"
+output_log="/var/log/${RC_SVCNAME}.log"
+error_log="/var/log/${RC_SVCNAME}.error"
+
+depend() {
+    need net
+    after firewall
+}
